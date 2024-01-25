@@ -19,3 +19,162 @@ main
         .pokemon-logo
             width: 800px
             height: 300px
+            animation: bounce 2s ease
+            animation-iteration-count: infinite
+        @keyframes bounce
+            0%   
+                transform: translateY(0)
+            50%  
+                transform: translateY(-20px)
+            100% 
+                transform: translateY(0)
+        .start
+            width: 200px
+            height: 60px
+            border-radius: 30px
+            background-color: #3c5ba6
+            border: 2px #ffcb05 solid
+            box-shadow: 0px 0px 10px 5px black
+            
+            display: flex
+            justify-content: center
+            align-items: center
+            p
+                color: #ffcb05
+                font-size: 20px
+                margin: 0
+                padding: 0
+    .hide 
+        display: none
+    .chose-pokemon
+        height: 100%
+        width: 100%
+        background-position: 100% 0%
+        background-image: url(../../public/assets/img/bckgTwo.jpg)
+        background-repeat: no-repeat
+        background-size: 2000px 800px
+
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .speech-bubble
+            width: 800px
+            height: 300px
+            .first-speech-bubble
+                width: 700px
+                height: 150px
+                position: absolute
+                left: 20px
+                top: 40px
+            .btn-next-chose-pokemon
+                position: absolute
+                top: 160px
+                left: 600px
+                border-radius: 50%
+                padding: 15px 15px 15px 15px
+                border: 2px solid black
+    
+                display: flex
+                justify-content: center
+                align-items: center
+                p
+                    margin: 0
+                    padding: 0
+            .second-speech-bubble
+                width: 700px
+                height: 150px
+                position: absolute
+                right: 20px
+                top: 150px
+            .btn-next-two
+                position: absolute
+                top: 260px
+                right: 80px
+                border-radius: 50%
+                padding: 15px 15px 15px 15px
+                border: 2px solid black
+            .third-speech-bubble
+                width: 700px
+                height: 150px
+                position: absolute
+                left: 20px
+                top: 250px
+            .hide
+                display: none
+        .my-pokemons
+            width: 70%
+            height: 100%
+
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 20px
+            .pokemon-one
+                width: 200px
+                height: 220px
+                background: rgb(black,0.3)
+                border-radius: 3px
+
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .moving-one
+                    img
+                    width: 130px
+                    height: 130px
+                .venusaur-btn
+                    width: 120px
+                    height: 50px
+                    border: 2px black solid
+
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    p
+                        padding: 0
+                        margin: 0
+                        color: #000
+                .static-one
+                   img
+                    width: 130px
+                    height: 130px
+                .hide
+                    display: none
+            .pokemon-two
+                width: 200px
+                height: 220px
+                background: rgb(black,0.3)
+                border-radius: 3px
+
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                .moving-one
+                    img
+                    width: 130px
+                    height: 130px
+                .charmeleon-btn
+                    width: 120px
+                    height: 50px
+                    border: 2px black solid
+
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    p
+                        padding: 0
+                        margin: 0
+                        color: #000
+                .static-one
+                   img
+                    width: 130px
+                    height: 130px
+                .hide
+                    display: none
+        .hide
+            display: none
+
+

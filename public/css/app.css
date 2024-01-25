@@ -11916,6 +11916,181 @@ main .start-display {
 main .start-display .pokemon-logo {
   width: 800px;
   height: 300px;
+  animation: bounce 2s ease;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+main .start-display .start {
+  width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #3c5ba6;
+  border: 2px #ffcb05 solid;
+  box-shadow: 0px 0px 10px 5px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .start-display .start p {
+  color: #ffcb05;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+main .hide {
+  display: none;
+}
+main .chose-pokemon {
+  height: 100%;
+  width: 100%;
+  background-position: 100% 0%;
+  background-image: url(../../public/assets/img/bckgTwo.jpg);
+  background-repeat: no-repeat;
+  background-size: 2000px 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .chose-pokemon .speech-bubble {
+  width: 800px;
+  height: 300px;
+}
+main .chose-pokemon .speech-bubble .first-speech-bubble {
+  width: 700px;
+  height: 150px;
+  position: absolute;
+  left: 20px;
+  top: 40px;
+}
+main .chose-pokemon .speech-bubble .btn-next-chose-pokemon {
+  position: absolute;
+  top: 160px;
+  left: 600px;
+  border-radius: 50%;
+  padding: 15px 15px 15px 15px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .chose-pokemon .speech-bubble .btn-next-chose-pokemon p {
+  margin: 0;
+  padding: 0;
+}
+main .chose-pokemon .speech-bubble .second-speech-bubble {
+  width: 700px;
+  height: 150px;
+  position: absolute;
+  right: 20px;
+  top: 150px;
+}
+main .chose-pokemon .speech-bubble .btn-next-two {
+  position: absolute;
+  top: 260px;
+  right: 80px;
+  border-radius: 50%;
+  padding: 15px 15px 15px 15px;
+  border: 2px solid black;
+}
+main .chose-pokemon .speech-bubble .third-speech-bubble {
+  width: 700px;
+  height: 150px;
+  position: absolute;
+  left: 20px;
+  top: 250px;
+}
+main .chose-pokemon .speech-bubble .hide {
+  display: none;
+}
+main .chose-pokemon .my-pokemons {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+main .chose-pokemon .my-pokemons .pokemon-one {
+  width: 200px;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .chose-pokemon .my-pokemons .pokemon-one .moving-one {
+  width: 130px;
+  height: 130px;
+}
+main .chose-pokemon .my-pokemons .pokemon-one .venusaur-btn {
+  width: 120px;
+  height: 50px;
+  border: 2px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .chose-pokemon .my-pokemons .pokemon-one .venusaur-btn p {
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+main .chose-pokemon .my-pokemons .pokemon-one .static-one img {
+  width: 130px;
+  height: 130px;
+}
+main .chose-pokemon .my-pokemons .pokemon-one .hide {
+  display: none;
+}
+main .chose-pokemon .my-pokemons .pokemon-two {
+  width: 200px;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .chose-pokemon .my-pokemons .pokemon-two .moving-one {
+  width: 130px;
+  height: 130px;
+}
+main .chose-pokemon .my-pokemons .pokemon-two .charmeleon-btn {
+  width: 120px;
+  height: 50px;
+  border: 2px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .chose-pokemon .my-pokemons .pokemon-two .charmeleon-btn p {
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+main .chose-pokemon .my-pokemons .pokemon-two .static-one img {
+  width: 130px;
+  height: 130px;
+}
+main .chose-pokemon .my-pokemons .pokemon-two .hide {
+  display: none;
+}
+main .chose-pokemon .hide {
+  display: none;
 }
 
 /*# sourceMappingURL=app.css.map */
