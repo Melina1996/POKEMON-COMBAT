@@ -12021,7 +12021,7 @@ main .chose-pokemon .my-pokemons {
   align-items: center;
   gap: 20px;
 }
-main .chose-pokemon .my-pokemons .pokemon-one {
+main .chose-pokemon .my-pokemons .pokemon {
   width: 200px;
   height: 220px;
   background: rgba(0, 0, 0, 0.3);
@@ -12031,11 +12031,11 @@ main .chose-pokemon .my-pokemons .pokemon-one {
   justify-content: center;
   align-items: center;
 }
-main .chose-pokemon .my-pokemons .pokemon-one .moving-one {
+main .chose-pokemon .my-pokemons .pokemon .moving-one {
   width: 130px;
   height: 130px;
 }
-main .chose-pokemon .my-pokemons .pokemon-one .venusaur-btn {
+main .chose-pokemon .my-pokemons .pokemon .pokemon-btn {
   width: 120px;
   height: 50px;
   border: 2px black solid;
@@ -12043,54 +12043,179 @@ main .chose-pokemon .my-pokemons .pokemon-one .venusaur-btn {
   justify-content: center;
   align-items: center;
 }
-main .chose-pokemon .my-pokemons .pokemon-one .venusaur-btn p {
+main .chose-pokemon .my-pokemons .pokemon .pokemon-btn p {
   padding: 0;
   margin: 0;
   color: #000;
 }
-main .chose-pokemon .my-pokemons .pokemon-one .static-one img {
+main .chose-pokemon .my-pokemons .pokemon .static-one img {
   width: 130px;
   height: 130px;
 }
-main .chose-pokemon .my-pokemons .pokemon-one .hide {
-  display: none;
-}
-main .chose-pokemon .my-pokemons .pokemon-two {
-  width: 200px;
-  height: 220px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-main .chose-pokemon .my-pokemons .pokemon-two .moving-one {
-  width: 130px;
-  height: 130px;
-}
-main .chose-pokemon .my-pokemons .pokemon-two .charmeleon-btn {
-  width: 120px;
-  height: 50px;
-  border: 2px black solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main .chose-pokemon .my-pokemons .pokemon-two .charmeleon-btn p {
-  padding: 0;
-  margin: 0;
-  color: #000;
-}
-main .chose-pokemon .my-pokemons .pokemon-two .static-one img {
-  width: 130px;
-  height: 130px;
-}
-main .chose-pokemon .my-pokemons .pokemon-two .hide {
+main .chose-pokemon .my-pokemons .pokemon .hide {
   display: none;
 }
 main .chose-pokemon .hide {
   display: none;
+}
+main .hide {
+  display: none;
+}
+
+.battle-display {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.battle-display .battle-container {
+  width: 550px;
+  height: 550px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+}
+.battle-display .battle-container .profile-player {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.battle-display .battle-container .profile-player .level {
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  left: 50px;
+}
+.battle-display .battle-container .profile-player .frame {
+  height: 50px;
+  width: 200px;
+  border-left: 4px solid black;
+  border-bottom: 4px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.battle-display .battle-container .profile-player .frame h1, .battle-display .battle-container .profile-player .frame .h1 {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+.battle-display .battle-container .profile-player .frame .health-points-player {
+  height: 10px;
+  width: 150px;
+  position: relative;
+  border: grey 1px solid;
+  border-radius: 5px;
+}
+.battle-display .battle-container .profile-player .frame .health-points-player .health-points-player-inside {
+  background-color: grey;
+  position: absolute;
+  height: 100%;
+}
+.battle-display .battle-container .avatar-opponent {
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  right: 40px;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.battle-display .battle-container .avatar-opponent a {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.battle-display .battle-container .avatar-opponent a img {
+  width: 90px;
+  heigth: 90px;
+}
+.battle-display .battle-container .avatar-opponent .profile-opponent {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+.battle-display .battle-container .avatar-opponent .profile-opponent .level {
+  padding: 0;
+  margin: 0;
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  left: 50px;
+}
+.battle-display .battle-container .avatar-opponent .profile-opponent .frame {
+  height: 50px;
+  width: 200px;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.battle-display .battle-container .avatar-opponent .profile-opponent .frame h1, .battle-display .battle-container .avatar-opponent .profile-opponent .frame .h1 {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+.battle-display .battle-container .avatar-opponent .profile-opponent .frame .health-points-opponent {
+  height: 10px;
+  width: 150px;
+  position: relative;
+  border: grey 1px solid;
+  border-radius: 5px;
+}
+.battle-display .battle-container .avatar-opponent .profile-opponent .frame .health-points-opponent .health-points-opponent-inside {
+  background-color: grey;
+  position: absolute;
+  height: 100%;
+}
+.battle-display .battle-container .player-from-the-back img {
+  position: absolute;
+  bottom: 190px;
+  left: 30px;
+  heigth: 90px;
+  width: 90px;
+}
+.battle-display .battle-container .game-box {
+  width: 90%;
+  height: 170px;
+  border: 2px solid black;
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+}
+.battle-display .battle-container .game-box .game-text-box {
+  width: 50%;
+  height: 100%;
+}
+.battle-display .battle-container .game-box .fight {
+  width: 50%;
+  height: 100%;
+  border: 2px solid black;
 }
 
 /*# sourceMappingURL=app.css.map */
