@@ -85,6 +85,8 @@ let indexPokemon
 
 let chosenBoss
 
+let chosenPokemon
+
 let bossCombat = document.querySelector("#opponent")
 
 function choseRandomBoss(array){
@@ -102,6 +104,18 @@ function choseRandomBoss(array){
   }
 }
 
+//assign the attack names as inner text to my btns 
+let allAttackNames = document.querySelectorAll(".attack-name")
+
+//assign all the attack names of my chosen Pokemon to my attack Btns
+function attackNames(player){
+  for (let i = 0; i < allAttackNames.length; i++) {
+    allAttackNames[i].innerText = player.attackNames[i]   
+  }
+}  
+
+
+
 //double LOOP in order to go over all my btns (addEventListener) & compare the clicked btn name with the Pokemons stocked in my array, respectively is the opponent pokemon chosen (among the remaining pokemons)
 
 allBtnPokemons.forEach(element => {
@@ -109,20 +123,48 @@ allBtnPokemons.forEach(element => {
     for (let i = 0; i < allPokemons.length; i++) {
       if(element.target.innerText == allPokemons[i].name){
         playerBack.src = allPokemons[i].backImg
+        chosenPokemon = allPokemons[i]
         document.querySelector(".name-player").innerText = allPokemons[i].name
         allPokemons.splice(i,1)
         choseDisplay.classList.add("hide")
         combatDisplay.classList.remove("hide")
         choseRandomBoss(allPokemons)
+        attackNames(chosenPokemon)
       }
     }
   })
 })
 
+
+let allAttackBtns = document.querySelectorAll(".my-attack")
+
+function attack(player){
+
+  allAttackBtns.forEach(element => {
+    element.addEventListener("click",(element)=>{
+      if(element.target.id == "attack-one"){
+        player.firstAttack()
+      } else if (element.target.id == "attack-two"){
+        player.secondAttack()
+      } else if (element.target.id == "attack-three"){
+        player.thirdAttack()
+      } else if (element.target.id == "attack-four"){
+        player.fourthAttack()
+      }
+    })
+  });
+}
+
 //COMBAT DISPLAY
 
+//all of my btns
+// let firstAttackBtn = document.querySelector("#attack-one")
 
+// let secondAttackBtn = document.querySelector("#attack-two")
 
+// let thirdAttackBtn = document.querySelector("#attack-three")
 
-
-
+// let fourthAttackBtn = document.querySelector("#attack-four")
+console.log(chosenPokemon)
+  
+attack(chosenPokemon)
