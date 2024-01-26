@@ -12094,6 +12094,59 @@ main .hide {
   display: none;
 }
 
+.dark-screen {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dark-screen .dark-speech-one {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dark-screen .dark-speech-one .bubble-dark-one {
+  width: 220px;
+  height: 150px;
+  margin-left: 40px;
+}
+.dark-screen .dark-speech-two {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.dark-screen .dark-speech-two .bubble-dark-two {
+  width: 500px;
+  height: 150px;
+  margin-right: 40px;
+}
+.dark-screen .dark-speech-three {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.dark-screen .dark-speech-three .bubble-dark-three {
+  width: 500px;
+  height: 150px;
+  margin-left: 40px;
+}
+.dark-screen .hide {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
 .battle-display {
   width: 100%;
   height: 100%;
