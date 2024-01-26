@@ -102,35 +102,22 @@ function choseRandomBoss(array){
   }
 }
 
+//double LOOP in order to go over all my btns (addEventListener) & compare the clicked btn name with the Pokemons stocked in my array, respectively is the opponent pokemon chosen (among the remaining pokemons)
+
 allBtnPokemons.forEach(element => {
   element.addEventListener("click",(element)=>{
-    if(element.target.innerText == "VENUSAUR"){
-      alert("CHOSE VENUSAUR")
-      playerBack.src = INSTANCE.venusaur.backImg
-      document.querySelector(".name-player").innerText = INSTANCE.venusaur.name
-      allPokemons.splice(0,1)
-      choseDisplay.classList.add("hide")
-      combatDisplay.classList.remove("hide")
-      choseRandomBoss(allPokemons)
-    } else if (element.target.innerText == "CHARMELEON"){
-      alert("CHOSE CHARMELEON")
-      playerBack.src = INSTANCE.charmeleon.backImg
-      document.querySelector(".name-player").innerText = INSTANCE.charmeleon.name
-      allPokemons.splice(1,1)
-      choseDisplay.classList.add("hide")
-      combatDisplay.classList.remove("hide")
-      choseRandomBoss(allPokemons)
-    } else if(element.target.innerText == "BLASTOISE"){
-      alert("CHOSE BLASTOISE")
-      playerBack.src = INSTANCE.blastoise.backImg
-      document.querySelector(".name-player").innerText = INSTANCE.blastoise.name
-      allPokemons.splice(2,1)
-      choseDisplay.classList.add("hide")
-      combatDisplay.classList.remove("hide")
-      choseRandomBoss(allPokemons)
+    for (let i = 0; i < allPokemons.length; i++) {
+      if(element.target.innerText == allPokemons[i].name){
+        playerBack.src = allPokemons[i].backImg
+        document.querySelector(".name-player").innerText = allPokemons[i].name
+        allPokemons.splice(i,1)
+        choseDisplay.classList.add("hide")
+        combatDisplay.classList.remove("hide")
+        choseRandomBoss(allPokemons)
+      }
     }
   })
-});
+})
 
 //COMBAT DISPLAY
 
