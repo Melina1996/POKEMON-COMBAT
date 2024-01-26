@@ -8,6 +8,10 @@ let startDisplay = document.querySelector(".start-display")
 
 let choseDisplay = document.querySelector(".chose-mario")
 
+let darkDisplay = document.querySelector(".dark-screen")
+
+let pokemonSurprise = document.querySelector(".pokemon-surprise")
+
 let combatDisplay = document.querySelector(".battle-display")
 
 
@@ -62,13 +66,21 @@ btnNextOne.addEventListener("click",()=>{
 
 //on click, the next bubble appears and 5s delayed the marios appear
 btnNextTwo.addEventListener("click",()=>{
+
   secondBubble.classList.add("hide")
+
   btnNextTwo.classList.add("hide")
+
   thirdBubble.classList.remove("hide")
+
   setTimeout(function(){
+
     thirdBubble.classList.add("hide")
+
     myMarios.classList.remove("hide")
+
   },5000)
+
 })
 
 
@@ -86,6 +98,7 @@ export let chosenMario
 
 
 allBtnMario.forEach(element => {
+
   element.addEventListener("click", (e) => {
 
     for (let i = 0; i < allMarios.length; i++) {
@@ -104,12 +117,46 @@ allBtnMario.forEach(element => {
 
         //need Timeout-function so the animation of the disappearing Mario/Peach has enough time
         setTimeout(function(){
+
           choseDisplay.classList.add("hide")
-          combatDisplay.classList.remove("hide")
-          FUNCTION.choseRandomBoss(allPokemons)
-          FUNCTION.attackNames(chosenMario)
-          FUNCTION.attack(chosenMario,FUNCTION.chosenBoss)
+
+          darkDisplay.classList.remove("hide")
+
         }, 2000)
+      
+
+        FUNCTION.bubblesDarkRoom()
+
+        setTimeout(function(){
+
+          darkDisplay.classList.add("hide")
+
+          pokemonSurprise.classList.remove("hide")
+
+          setTimeout(function(){
+
+            FUNCTION.opponents()
+
+            setTimeout(function(){
+
+              pokemonSurprise.classList.add("hide")
+
+              combatDisplay.classList.remove("hide")
+
+              FUNCTION.choseRandomBoss(allPokemons)
+
+              FUNCTION.attackNames(chosenMario)
+
+              FUNCTION.attack(chosenMario,FUNCTION.chosenBoss)
+
+            },14000)
+
+          },2000)
+
+          
+
+        },14000) 
+
       }
     }
   })

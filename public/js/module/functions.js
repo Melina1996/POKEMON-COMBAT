@@ -1,6 +1,79 @@
 import * as INSTANCE from "./instances.js"
 import * as MAIN from "./../main.js"
 
+//DARK ROOM BUBBLES
+
+export let firstDarkBubble = document.querySelector(".bubble-dark-one")
+
+export let secondDarkBubble = document.querySelector(".bubble-dark-two")
+
+export let thirdDarkBubble = document.querySelector(".bubble-dark-three")
+
+
+export function bubblesDarkRoom(){
+    setTimeout(function(){
+
+        firstDarkBubble.classList.remove("hide")
+        
+    }, 1000)
+
+    setTimeout(function(){
+
+        firstDarkBubble.classList.add("hide")
+        secondDarkBubble.classList.remove("hide")
+        
+    }, 5000)
+
+    setTimeout(function(){
+
+        secondDarkBubble.classList.add("hide")
+        thirdDarkBubble.classList.remove("hide")
+        
+    }, 9000)
+}
+
+//THE TWO OPPONENTS SCREEN
+
+let logoPokemon = document.querySelector(".img-logo-pokemon")
+
+let logoMario = document.querySelector(".super-mario-logo")
+console.log(logoMario)
+
+let speechTimeTravel = document.querySelector(".speech-time-travel")
+
+let speechPokemonCombat = document.querySelector(".speech-pokemon-combat")
+
+let vsText = document.querySelector(".vs-text")
+
+export function opponents(){
+
+        logoPokemon.classList.add("hide")
+
+        logoMario.classList.add("hide")
+    
+        vsText.innerText = ""
+
+        speechTimeTravel.classList.remove("hide")
+
+        setTimeout(function(){
+
+            speechTimeTravel.classList.add("hide")
+
+            speechPokemonCombat.classList.remove("hide")
+
+            setTimeout(function(){
+
+    
+                speechPokemonCombat.classList.add("hide")
+    
+                vsText.innerText = `coucou`
+    
+            },6000)
+
+        },7000)
+
+}
+
 //CHOSE RANDOM OPPONENT
 
 export let indexPokemon
