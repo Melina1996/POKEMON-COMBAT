@@ -72,8 +72,9 @@ let allBtnPokemons = document.querySelectorAll(".pokemon-btn")
 //player in display "combat"
 let playerBack = document.querySelector("#player-back")
 
-let allPokemons = [INSTANCE.venusaur,INSTANCE.charmeleon,INSTANCE.blastoise]
+let allMarios = [INSTANCE.peach,INSTANCE.mario]
 
+let allPokemons = [INSTANCE.charmeleon,INSTANCE.venusaur,INSTANCE.blastoise]
 
 //CHOSE RANDOM OPPONENT
 
@@ -94,7 +95,10 @@ function choseRandomBoss(array){
     //add the randomly chosen img-link to my div of the opponent
     bossCombat.src = chosenBoss.frontImg
 
+    bossCombat.setAttribute("originalhp",`${chosenBoss.healthPoints}`)
+
     document.querySelector(".name-opponent").innerText = chosenBoss.name
+
   }
 }
 
@@ -108,11 +112,9 @@ function attackNames(player){
   }
 } 
 
-let chosenPokemon;
 
-
- 
 let indexAttack
+
 let chosenAttack
 
 let attacksOrder = ["attack-one","attack-two","attack-three","attack-four"]
@@ -131,15 +133,20 @@ function attackBoss(playerTwo,playerOne){
   if(chosenAttack == "attack-one"){
     playerTwo.firstAttack(playerOne)
     gameText.innerText = `${playerTwo.name} attacks ${playerOne.name} and leaves him with ${playerOne.healthPoints} HP`
+    profileHPOne.style.width = `${playerOne.healthPoints/playerBack.getAttribute("originalhp")*100}%`
   } else if(chosenAttack == "attack-two"){
     playerTwo.secondAttack(playerOne)
     gameText.innerText = `${playerTwo.name} attacks ${playerOne.name} and leaves him with ${playerOne.healthPoints} HP`
+    profileHPOne.style.width = `${playerOne.healthPoints/playerBack.getAttribute("originalhp")*100}%`
   } else if(chosenAttack == "attack-three"){
     playerTwo.thirdAttack(playerOne)
     gameText.innerText = `${playerTwo.name} attacks ${playerOne.name} and leaves him with ${playerOne.healthPoints} HP`
+    profileHPOne.style.width = `${playerOne.healthPoints/playerBack.getAttribute("originalhp")*100}%`
   } else if(chosenAttack == "attack-four"){
     playerTwo.fourthAttack(playerOne)
-    gameText.innerText = `${playerTwo.name} recovers and gains new HP to in total: ${playerOne.healthPoints}`
+    gameText.innerText = `${playerTwo.name} recovers and gains new HP to in total: ${playerOne.healthPoints} HP`
+    profileHPOne.style.width = `${playerOne.healthPoints/playerBack.getAttribute("originalhp")*100}%`
+
   }
 }
 
@@ -147,16 +154,11 @@ let allAttackBtns = document.querySelectorAll(".my-attack")
 
 //attack function and respective variables
 
-//all of my btns
-let firstAttackBtn = document.querySelector("#attack-one")
-
-let secondAttackBtn = document.querySelector("#attack-two")
-
-let thirdAttackBtn = document.querySelector("#attack-three")
-
-let fourthAttackBtn = document.querySelector("#attack-four")
-
 let gameText = document.querySelector(".game-text")
+
+let profileHPOne = document.querySelector(".health-points-player-inside")
+
+let profileHPTwo = document.querySelector(".health-points-opponent-inside")
 
 function attack(playerOne,playerTwo){
   
@@ -172,34 +174,39 @@ function attack(playerOne,playerTwo){
             if(e.target.id == "attack-one"){
               playerOne.firstAttack(playerTwo)
               gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
+              profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
             } else if (e.target.id == "attack-two"){
               playerOne.secondAttack(playerTwo)
               gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
+              profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
             } else if (e.target.id == "attack-three"){
               playerOne.thirdAttack(playerTwo)
               gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
+              profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
             } else if (e.target.id == "attack-four"){
               playerOne.fourthAttack(playerTwo)
-              gameText.innerText = `${e.target.innerText}: ${playerOne.name} recovers and gains new HP to in total: ${playerOne.healthPoints}`
+              gameText.innerText = `${e.target.innerText}: ${playerOne.name} recovers and gains new HP to in total: ${playerOne.healthPoints} HP`
+              profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
             }
 
-          if(playerTwo.healthPoints > 0){
+          if(playerTwo.healthPoints > 0 && playerOne.healthPoints > 0){
             randomAttack(attacksOrder)
             setTimeout(function(){
-              attackBoss(chosenBoss,chosenPokemon);
+              attackBoss(chosenBoss,chosenMario);
             }, 2000)
 
+            if(playerTwo.healthPoints <= 0){
+              alert(`${playerOne.name} is DEAD`)
+            } 
+            
+          } else {
+            
             if(playerOne.healthPoints <= 0){
               alert(`${playerOne.name} is DEAD`)
             } else if(playerTwo.healthPoints <= 0){
               alert(`${playerTwo.name} is DEAD`)
             }
-            
-          } else {if(playerOne.healthPoints <= 0){
-            alert(`${playerOne.name} is DEAD`)
-          } else if(playerTwo.healthPoints <= 0){
-            alert(`${playerTwo.name} is DEAD`)
-          }}
+          }
 
       } else {
         if(playerOne.healthPoints <= 0){
@@ -212,22 +219,24 @@ function attack(playerOne,playerTwo){
   })
 }
 
+let chosenMario
 
 //START from the choice of my Pokemon (if I call the functions separately, the respective variables are not recognized)
 
 allBtnPokemons.forEach(element => {
   element.addEventListener("click", (e) => {
-    for (let i = 0; i < allPokemons.length; i++) {
-      if(e.target.innerText == allPokemons[i].name){
-        chosenPokemon = allPokemons[i]
-        playerBack.src = allPokemons[i].backImg
-        document.querySelector(".name-player").innerText = allPokemons[i].name
-        allPokemons.splice(i,1)
+    for (let i = 0; i < allMarios.length; i++) {
+      if(e.target.innerText == allMarios[i].name){
+        chosenMario = allMarios[i]
+        playerBack.src = allMarios[i].backImg
+        //stock the value of the original HP in an attribute of my pokemon
+        playerBack.setAttribute("originalhp",`${allMarios[i].healthPoints}`)
+        document.querySelector(".name-player").innerText = allMarios[i].name
         choseDisplay.classList.add("hide")
         combatDisplay.classList.remove("hide")
         choseRandomBoss(allPokemons)
-        attackNames(chosenPokemon)
-        attack(chosenPokemon,chosenBoss)
+        attackNames(chosenMario)
+        attack(chosenMario,chosenBoss)
       }
     }
   })

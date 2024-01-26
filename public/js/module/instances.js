@@ -7,4 +7,6 @@ export let venusaur = new CLASS.Venusaur("VENUSAUR",140,30,["MEGA VENUSAUR","GIG
 
 export let blastoise = new CLASS.Blastoise("BLASTOISE",120,40,["MEGA SPLASH","GIGANTA SPLASH","SPLASH","RECOVER"],"https://img.pokemondb.net/sprites/yellow/back-normal/blastoise.png","https://img.pokemondb.net/sprites/yellow/normal/blastoise.png")
 
+export let mario = new CLASS.Mario("MARIO",120,40,["SUPER MARIO","MAMMA MIA","HYPER MARIO","RECOVER"],"./public/assets/img/PngItem_2315432.png","")
 
+export let peach = new CLASS.Peach("PEACH",140,30,["SUPER PEACH","PRINCESSMANIA","HYPER PEACH","RECOVER"],"./public/assets/img/kindpng_1478591.png","")

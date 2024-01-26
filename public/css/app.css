@@ -12048,9 +12048,9 @@ main .chose-pokemon .my-pokemons .pokemon .pokemon-btn p {
   margin: 0;
   color: #000;
 }
-main .chose-pokemon .my-pokemons .pokemon .static-one img {
+main .chose-pokemon .my-pokemons .pokemon .static-one {
   width: 130px;
-  height: 130px;
+  height: 140px;
 }
 main .chose-pokemon .my-pokemons .pokemon .hide {
   display: none;
