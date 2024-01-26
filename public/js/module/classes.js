@@ -15,19 +15,26 @@ export class Charmeleon extends Pokemon {
     super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
     }
 
-    firstAttack(){
-        console.log("IM CHARELEON")
+    firstAttack(opponent){
+        opponent.healthPoints -= this.attackPoints
+        console.log(opponent.healthPoints)
     }
 
-    secondAttack(){
-        console.log("BLABLA CHARMELEON")
+    secondAttack(opponent){
+        opponent.healthPoints -= 2*this.attackPoints
+        console.log(opponent.healthPoints)
+
     }
 
-    thirdAttack(){
+    thirdAttack(opponent){
+        opponent.healthPoints -= 3*this.attackPoints
+        console.log(opponent.healthPoints)
 
     }
 
     fourthAttack(){
+        this.healthPoints += 30
+        console.log(this.healthPoints)
 
     }
 }
@@ -38,19 +45,27 @@ export class Venusaur extends Pokemon {
     super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
     }
 
-    firstAttack(){
-        console.log("VENUSAUR AM START")
+    firstAttack(opponent){
+        opponent.healthPoints -= this.attackPoints
+        console.log(opponent.healthPoints)
+
     }
 
-    secondAttack(){
-        console.log("NOCHMAL VENUSAUR AM START")
+    secondAttack(opponent){
+        opponent.healthPoints -= 2*this.attackPoints
+        console.log(opponent.healthPoints)
+
     }
 
-    thirdAttack(){
+    thirdAttack(opponent){
+        opponent.healthPoints -= 3*this.attackPoints
+        console.log(opponent.healthPoints)
 
     }
 
     fourthAttack(){
+        this.healthPoints += 40
+        console.log(this.healthPoints)
 
     }
 }
@@ -60,19 +75,27 @@ export class Blastoise extends Pokemon {
     super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
     }
 
-    firstAttack(){
-        console.log("Blastoise AM START")
+    firstAttack(opponent){
+        opponent.healthPoints -= this.attackPoints
+        console.log(opponent.healthPoints)
+
     }
 
-    secondAttack(){
-        console.log("NOCHMAL Blastoise AM START")
+    secondAttack(opponent){
+        opponent.healthPoints -= 2*this.attackPoints
+        console.log(opponent.healthPoints)
     }
 
-    thirdAttack(){
+
+    thirdAttack(opponent){
+        opponent.healthPoints -= 3*this.attackPoints
+        console.log(opponent.healthPoints)
 
     }
 
     fourthAttack(){
+        this.healthPoints += 20
+        console.log(this.healthPoints)
 
     }
 }
