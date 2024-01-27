@@ -115,6 +115,7 @@ let myMario = document.querySelector("#img-mario")
 
 let myPeach = document.querySelector("#img-peach")
 
+//chosen Player disappears in the tube
 export function disappear(player){
 
   console.log(player.name)
@@ -172,8 +173,27 @@ export function attackBoss(playerTwo,playerOne){
         playerTwo.fourthAttack(playerOne)
         gameText.innerText = `${playerTwo.name} recovers and gains new HP to in total: ${playerOne.healthPoints} HP`
         profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
-    
       }
+
+    if(playerOne.healthPoints <= 0){
+
+        setTimeout(function(){gameOver()}, 1000)
+
+    } 
+}
+
+//show losing display
+
+function gameOver(){
+    MAIN.runningGame.classList.add("hide")
+    MAIN.gameOver.classList.remove("hide")
+}
+
+//show losing display
+
+function win(){
+    MAIN.combatDisplay.classList.add("hide")
+    MAIN.win.classList.remove("hide")
 }
 
 
@@ -215,26 +235,33 @@ export function attack(playerOne,playerTwo){
                 setTimeout(function(){
                 attackBoss(chosenBoss,MAIN.chosenMario);
                 }, 2000)
-    
-                  if(playerTwo.healthPoints <= 0){
-                    alert(`${playerOne.name} is DEAD`)
-                  } 
                 
+                //in case one of the players is dead before boss'attack
               } else {
                 
-                  if(playerOne.healthPoints <= 0){
-                  alert(`${playerOne.name} is DEAD`)
-                } else if(playerTwo.healthPoints <= 0){
-                  alert(`${playerTwo.name} is DEAD`)
-                }
+                    if(playerOne.healthPoints <= 0){
+
+                        setTimeout(function(){gameOver()}, 1000)
+
+                    } else if(playerTwo.healthPoints <= 0){
+
+                        setTimeout(function(){win()}, 1000)
+                    }
               }
     
-          } else {
-            if(playerOne.healthPoints <= 0){
-              alert(`${playerOne.name} is DEAD`)
-            } else if(playerTwo.healthPoints <= 0){
-              alert(`${playerTwo.name} is DEAD`)
-            }
+              //in case one of the players is already dead before the next round
+          } 
+        else {
+
+                if(playerOne.healthPoints <= 0){
+
+                    setTimeout(function(){gameOver()}, 1000)
+
+                } else if(playerTwo.healthPoints <= 0){
+
+                    setTimeout(function(){win()}, 1000)
+                
+                }
           }
         })  
       })

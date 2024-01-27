@@ -15,79 +15,25 @@
         flex-direction: column
         position: relative
         align-items: center
-        .profile-player
-            width: 200px
-            height: 200px
-            position: absolute
-            left: 20px
+        .game-on
+            width: 100%
+            height: 100%
 
             display: flex
-            flex-direction: column
-            justify-content: center
+            position: relative
             align-items: center
-            gap: 10px
-            .level
-                padding: 0
-                margin: 0
-                color: black
-                font-size: 20px
-                position: absolute
-                left: 50px
-            .frame
-                height: 50px
+            justify-content: center
+            .profile-player
                 width: 200px
-                border-left: 4px solid black
-                border-bottom: 4px solid black
-
-                display: flex
-                justify-content: center
-                align-items: center
-                gap: 5px
-                h1
-                    font-size: 20px
-                    padding: 0
-                    margin: 0
-                .health-points-player
-                    height: 10px
-                    width: 150px
-                    position: relative
-                    border: grey 1px solid
-                    border-radius: 5px
-                    .health-points-player-inside
-                        background-color: grey
-                        position: absolute
-                        height: 100%
-        .avatar-opponent
-            width: 200px
-            height: 250px
-            position: absolute
-            right: 40px
-            top: 150px
-
-            display: flex
-            flex-direction: column
-            gap: 5px
-            justify-content: center
-            align-items: center
-            a
-                width: 100%
-                height: 20%
-
-                display: flex
-                justify-content: center
-                align-items: center
-                img
-                    width: 90px
-                    heigth: 90px
-            .profile-opponent
-                width: 100%
-                height: 80%
+                height: 200px
+                position: absolute
+                left: 20px
+                top: 20px
 
                 display: flex
                 flex-direction: column
                 justify-content: center
                 align-items: center
-                position: relative
                 gap: 10px
                 .level
                     padding: 0
@@ -99,7 +45,7 @@
                 .frame
                     height: 50px
                     width: 200px
-                    border-right: 4px solid black
+                    border-left: 4px solid black
                     border-bottom: 4px solid black
 
                     display: flex
@@ -110,52 +56,115 @@
                         font-size: 20px
                         padding: 0
                         margin: 0
-                    .health-points-opponent
+                    .health-points-player
                         height: 10px
                         width: 150px
                         position: relative
                         border: grey 1px solid
                         border-radius: 5px
-                        .health-points-opponent-inside
+                        .health-points-player-inside
                             background-color: grey
                             position: absolute
                             height: 100%
-        .player-mario
-            img
+            .avatar-opponent
+                width: 200px
+                height: 250px
                 position: absolute
-                bottom: 190px
-                left: 30px
-                heigth: 90px
-                width: 90px
-        .game-box
-            width: 90%
-            height: 170px
-            border: 2px solid black 
-            // border-style: inset double
-
-            position: absolute
-            bottom: 5px
-
-            display: flex        
-            .game-text-box
-                width: 50%
-                height: 100%
-            .fight
-                width: 50%
-                height: 100%
-                border: 2px solid black
+                right: 40px
+                top: 150px
 
                 display: flex
-                flex-wrap: wrap
+                flex-direction: column
+                gap: 5px
                 justify-content: center
                 align-items: center
-                gap: 5px
-                .my-attack
-                    width: 45%
-                    height: 45%
-                    background: grey
-        .hide
-            display: none
+                a
+                    width: 100%
+                    height: 20%
+
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    img
+                        width: 90px
+                        heigth: 90px
+                .profile-opponent
+                    width: 100%
+                    height: 80%
+
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    align-items: center
+                    position: relative
+                    gap: 10px
+                    .level
+                        padding: 0
+                        margin: 0
+                        color: black
+                        font-size: 20px
+                        position: absolute
+                        left: 50px
+                    .frame
+                        height: 50px
+                        width: 200px
+                        border-right: 4px solid black
+                        border-bottom: 4px solid black
+
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        gap: 5px
+                        h1
+                            font-size: 20px
+                            padding: 0
+                            margin: 0
+                        .health-points-opponent
+                            height: 10px
+                            width: 150px
+                            position: relative
+                            border: grey 1px solid
+                            border-radius: 5px
+                            .health-points-opponent-inside
+                                background-color: grey
+                                position: absolute
+                                height: 100%
+            .player-mario
+                img
+                    position: absolute
+                    bottom: 190px
+                    left: 30px
+                    heigth: 90px
+                    width: 90px
+            .game-box
+                width: 90%
+                height: 170px
+                border: 2px solid black 
+                // border-style: inset double
+
+                position: absolute
+                bottom: 5px
+
+                display: flex        
+                .game-text-box
+                    width: 50%
+                    height: 100%
+                .fight
+                    width: 50%
+                    height: 100%
+                    border: 2px solid black
+
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: center
+                    align-items: center
+                    gap: 5px
+                    .my-attack
+                        width: 45%
+                        height: 45%
+                        background: grey
+            .hide
+                display: none
         .game-over-display
             width: 100%
             height: 100%
@@ -168,7 +177,7 @@
             .black-white-img
                     width: 90px
                     height: 90px
-                    animation: mover 2.5s ease
+                    animation: gameOver 2.5s ease
                     animation-fill-mode: forwards
             .game-text-box
                 width: 90%
@@ -185,11 +194,13 @@
                     font-family: Epson Pixeled
                     color: black
                     letter-spacing: 0.3em
-            @keyframes mover
+            @keyframes gameOver
                 0%
                     transform: translateY(0px)
                 100%
                     transform: translateY(450px)
+        .hide
+            display: none
 
                     
 

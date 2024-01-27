@@ -8,19 +8,20 @@ main
     .start-display
         width: 100%
         height: 100%
-        background-image: url(../../public/assets/img/pokemonBackground.png)
+        background-image: url(../../public/assets/img/winningBckg.jpg)
         position: center
-        background-size: cover
+        background-size: 1500px 800px
 
         display: flex
         flex-direction: column
-        justify-content: center
+        justify-content: flex-start
         align-items: center
         .mario-logo
-            width: 800px
-            height: 300px
+            width: 680px
+            height: 250px
             animation: bounce 2s ease
             animation-iteration-count: infinite
+            margin-top: 80px
         @keyframes bounce
             0%   
                 transform: translateY(0)
@@ -29,21 +30,34 @@ main
             100% 
                 transform: translateY(0)
         .start
-            width: 200px
-            height: 60px
-            border-radius: 30px
-            background-color: #3c5ba6
-            border: 2px #ffcb05 solid
-            box-shadow: 0px 0px 10px 5px black
+            width: 300px
+            height: 80px
+            background-color: #ffcb05
+            border: 7px solid black
+            border-radius: 10px
+            margin-top: 10px
+            filter: drop-shadow(5px 15px 15px #222)
             
             display: flex
             justify-content: center
             align-items: center
             p
-                color: #ffcb05
-                font-size: 20px
+                color: black
+                font-size: 35px
                 margin: 0
                 padding: 0
+                font-family: SuperMarioBros-ov7d
+        .start:hover
+            background-color: #409fdb
+            border: 7px solid #ffcb05
+            p
+                color: white
+        .mario
+            position: absolute
+            bottom: 30px
+            left: 30px
+            width: 260px
+            height: 400px
     .hide 
         display: none
     

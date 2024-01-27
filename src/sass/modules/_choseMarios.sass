@@ -122,10 +122,6 @@
                 flex-direction: column
                 justify-content: center
                 align-items: center
-                .moving-one
-                    img
-                    width: 130px
-                    height: 130px
                 .mario-btn
                     width: 120px
                     height: 50px
@@ -150,12 +146,16 @@
                     background-color: #f15181
                 #mario:hover
                     background-color: red
-                .static-one
+                #img-peach
+                    width: 130px
+                    height: 140px
+                    filter: drop-shadow(5px 15px 15px #222)
+                #img-mario
                     width: 130px
                     height: 140px
                     filter: drop-shadow(5px 15px 15px #222)
                 .tube
-                    animation: mover 2s infinite
+                    animation: moveTube 2s infinite
                 .bounce
                     animation: bounce 2s ease
                     animation-iteration-count: infinite
@@ -165,7 +165,7 @@
                     z-index: 30
                 .hide
                     display: none
-                @keyframes mover
+                @keyframes moveTube
                     0%
                         transfrom: translateY(0)
                     100%

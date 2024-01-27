@@ -4,16 +4,21 @@ import * as FUNCTION from "./module/functions.js"
 
 //ALL MY DISPLAYS
 
-let startDisplay = document.querySelector(".start-display")
+export let startDisplay = document.querySelector(".start-display")
 
-let choseDisplay = document.querySelector(".chose-mario")
+export let choseDisplay = document.querySelector(".chose-mario")
 
-let darkDisplay = document.querySelector(".dark-screen")
+export let darkDisplay = document.querySelector(".dark-screen")
 
-let pokemonSurprise = document.querySelector(".pokemon-surprise")
+export let pokemonSurprise = document.querySelector(".pokemon-surprise")
 
-let combatDisplay = document.querySelector(".battle-display")
+export let combatDisplay = document.querySelector(".battle-display")
 
+export let runningGame = document.querySelector(".game-on")
+
+export let gameOver = document.querySelector(".game-over-display")
+
+export let win = document.querySelector(".winning-display")
 
 //START DISPLAY
 

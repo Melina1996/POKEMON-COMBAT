@@ -11887,6 +11887,10 @@ textarea.form-control-lg {
   font-family: "Pokemon Pixel Font Regular";
   src: url("https://www.fontsaddict.com/fontface/pokemon-pixel-font-regular.ttf");
 }
+@font-face {
+  font-family: "SuperMarioBros-ov7d";
+  src: url("../../../public/assets/fonts/SuperMarioBros-ov7d.ttf");
+}
 body {
   margin: 0;
   padding: 0;
@@ -11905,19 +11909,20 @@ main {
 main .start-display {
   width: 100%;
   height: 100%;
-  background-image: url(../../public/assets/img/pokemonBackground.png);
+  background-image: url(../../public/assets/img/winningBckg.jpg);
   position: center;
-  background-size: cover;
+  background-size: 1500px 800px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 main .start-display .mario-logo {
-  width: 800px;
-  height: 300px;
+  width: 680px;
+  height: 250px;
   animation: bounce 2s ease;
   animation-iteration-count: infinite;
+  margin-top: 80px;
 }
 @keyframes bounce {
   0% {
@@ -11931,21 +11936,37 @@ main .start-display .mario-logo {
   }
 }
 main .start-display .start {
-  width: 200px;
-  height: 60px;
-  border-radius: 30px;
-  background-color: #3c5ba6;
-  border: 2px #ffcb05 solid;
-  box-shadow: 0px 0px 10px 5px black;
+  width: 300px;
+  height: 80px;
+  background-color: #ffcb05;
+  border: 7px solid black;
+  border-radius: 10px;
+  margin-top: 10px;
+  filter: drop-shadow(5px 15px 15px #222);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 main .start-display .start p {
-  color: #ffcb05;
-  font-size: 20px;
+  color: black;
+  font-size: 35px;
   margin: 0;
   padding: 0;
+  font-family: SuperMarioBros-ov7d;
+}
+main .start-display .start:hover {
+  background-color: #409fdb;
+  border: 7px solid #ffcb05;
+}
+main .start-display .start:hover p {
+  color: white;
+}
+main .start-display .mario {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 260px;
+  height: 400px;
 }
 main .hide {
   display: none;
@@ -12086,10 +12107,6 @@ main .hide {
   justify-content: center;
   align-items: center;
 }
-.chose-mario .my-marios .mario .moving-one {
-  width: 130px;
-  height: 130px;
-}
 .chose-mario .my-marios .mario .mario-btn {
   width: 120px;
   height: 50px;
@@ -12117,13 +12134,18 @@ main .hide {
 .chose-mario .my-marios .mario #mario:hover {
   background-color: red;
 }
-.chose-mario .my-marios .mario .static-one {
+.chose-mario .my-marios .mario #img-peach {
+  width: 130px;
+  height: 140px;
+  filter: drop-shadow(5px 15px 15px #222);
+}
+.chose-mario .my-marios .mario #img-mario {
   width: 130px;
   height: 140px;
   filter: drop-shadow(5px 15px 15px #222);
 }
 .chose-mario .my-marios .mario .tube {
-  animation: mover 2s infinite;
+  animation: moveTube 2s infinite;
 }
 .chose-mario .my-marios .mario .bounce {
   animation: bounce 2s ease;
@@ -12137,7 +12159,7 @@ main .hide {
 .chose-mario .my-marios .mario .hide {
   display: none;
 }
-@keyframes mover {
+@keyframes moveTube {
   0% {
     transfrom: translateY(0);
   }
@@ -12327,18 +12349,27 @@ main .hide {
   position: relative;
   align-items: center;
 }
-.battle-display .battle-container .profile-player {
+.battle-display .battle-container .game-on {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.battle-display .battle-container .game-on .profile-player {
   width: 200px;
   height: 200px;
   position: absolute;
   left: 20px;
+  top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.battle-display .battle-container .profile-player .level {
+.battle-display .battle-container .game-on .profile-player .level {
   padding: 0;
   margin: 0;
   color: black;
@@ -12346,7 +12377,7 @@ main .hide {
   position: absolute;
   left: 50px;
 }
-.battle-display .battle-container .profile-player .frame {
+.battle-display .battle-container .game-on .profile-player .frame {
   height: 50px;
   width: 200px;
   border-left: 4px solid black;
@@ -12356,24 +12387,24 @@ main .hide {
   align-items: center;
   gap: 5px;
 }
-.battle-display .battle-container .profile-player .frame h1, .battle-display .battle-container .profile-player .frame .h1 {
+.battle-display .battle-container .game-on .profile-player .frame h1, .battle-display .battle-container .game-on .profile-player .frame .h1 {
   font-size: 20px;
   padding: 0;
   margin: 0;
 }
-.battle-display .battle-container .profile-player .frame .health-points-player {
+.battle-display .battle-container .game-on .profile-player .frame .health-points-player {
   height: 10px;
   width: 150px;
   position: relative;
   border: grey 1px solid;
   border-radius: 5px;
 }
-.battle-display .battle-container .profile-player .frame .health-points-player .health-points-player-inside {
+.battle-display .battle-container .game-on .profile-player .frame .health-points-player .health-points-player-inside {
   background-color: grey;
   position: absolute;
   height: 100%;
 }
-.battle-display .battle-container .avatar-opponent {
+.battle-display .battle-container .game-on .avatar-opponent {
   width: 200px;
   height: 250px;
   position: absolute;
@@ -12385,18 +12416,18 @@ main .hide {
   justify-content: center;
   align-items: center;
 }
-.battle-display .battle-container .avatar-opponent a {
+.battle-display .battle-container .game-on .avatar-opponent a {
   width: 100%;
   height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.battle-display .battle-container .avatar-opponent a img {
+.battle-display .battle-container .game-on .avatar-opponent a img {
   width: 90px;
   heigth: 90px;
 }
-.battle-display .battle-container .avatar-opponent .profile-opponent {
+.battle-display .battle-container .game-on .avatar-opponent .profile-opponent {
   width: 100%;
   height: 80%;
   display: flex;
@@ -12406,7 +12437,7 @@ main .hide {
   position: relative;
   gap: 10px;
 }
-.battle-display .battle-container .avatar-opponent .profile-opponent .level {
+.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .level {
   padding: 0;
   margin: 0;
   color: black;
@@ -12414,7 +12445,7 @@ main .hide {
   position: absolute;
   left: 50px;
 }
-.battle-display .battle-container .avatar-opponent .profile-opponent .frame {
+.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame {
   height: 50px;
   width: 200px;
   border-right: 4px solid black;
@@ -12424,31 +12455,31 @@ main .hide {
   align-items: center;
   gap: 5px;
 }
-.battle-display .battle-container .avatar-opponent .profile-opponent .frame h1, .battle-display .battle-container .avatar-opponent .profile-opponent .frame .h1 {
+.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame h1, .battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame .h1 {
   font-size: 20px;
   padding: 0;
   margin: 0;
 }
-.battle-display .battle-container .avatar-opponent .profile-opponent .frame .health-points-opponent {
+.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame .health-points-opponent {
   height: 10px;
   width: 150px;
   position: relative;
   border: grey 1px solid;
   border-radius: 5px;
 }
-.battle-display .battle-container .avatar-opponent .profile-opponent .frame .health-points-opponent .health-points-opponent-inside {
+.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame .health-points-opponent .health-points-opponent-inside {
   background-color: grey;
   position: absolute;
   height: 100%;
 }
-.battle-display .battle-container .player-mario img {
+.battle-display .battle-container .game-on .player-mario img {
   position: absolute;
   bottom: 190px;
   left: 30px;
   heigth: 90px;
   width: 90px;
 }
-.battle-display .battle-container .game-box {
+.battle-display .battle-container .game-on .game-box {
   width: 90%;
   height: 170px;
   border: 2px solid black;
@@ -12456,11 +12487,11 @@ main .hide {
   bottom: 5px;
   display: flex;
 }
-.battle-display .battle-container .game-box .game-text-box {
+.battle-display .battle-container .game-on .game-box .game-text-box {
   width: 50%;
   height: 100%;
 }
-.battle-display .battle-container .game-box .fight {
+.battle-display .battle-container .game-on .game-box .fight {
   width: 50%;
   height: 100%;
   border: 2px solid black;
@@ -12470,12 +12501,12 @@ main .hide {
   align-items: center;
   gap: 5px;
 }
-.battle-display .battle-container .game-box .fight .my-attack {
+.battle-display .battle-container .game-on .game-box .fight .my-attack {
   width: 45%;
   height: 45%;
   background: grey;
 }
-.battle-display .battle-container .hide {
+.battle-display .battle-container .game-on .hide {
   display: none;
 }
 .battle-display .battle-container .game-over-display {
@@ -12490,7 +12521,7 @@ main .hide {
 .battle-display .battle-container .game-over-display .black-white-img {
   width: 90px;
   height: 90px;
-  animation: mover 2.5s ease;
+  animation: gameOver 2.5s ease;
   animation-fill-mode: forwards;
 }
 .battle-display .battle-container .game-over-display .game-text-box {
@@ -12509,13 +12540,89 @@ main .hide {
   color: black;
   letter-spacing: 0.3em;
 }
-@keyframes mover {
+@keyframes gameOver {
   0% {
     transform: translateY(0px);
   }
   100% {
     transform: translateY(450px);
   }
+}
+.battle-display .battle-container .hide {
+  display: none;
+}
+
+.winning-display {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../public/assets/img/winningBckg.jpg);
+  position: center;
+  background-size: 1500px 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.winning-display .cheering-peach-and-mario {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+.winning-display .cheering-peach-and-mario .winning-mario {
+  width: 300px;
+  height: 300px;
+  margin-top: 100px;
+  filter: drop-shadow(5px 15px 15px #222);
+  animation: bounce 1s ease;
+  animation-iteration-count: infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.winning-display .great-job-box {
+  width: 100%;
+  height: 20%;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(5px 15px 15px #222);
+  margin-bottom: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.winning-display .great-job-box h1, .winning-display .great-job-box .h1 {
+  color: white;
+}
+.winning-display .bomb {
+  position: absolute;
+  left: -200px;
+  z-index: 30;
+  animation: mover 3s ease;
+  animation-fill-mode: forwards;
+  width: 400px;
+  height: 300px;
+}
+@keyframes mover {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1700px);
+  }
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=app.css.map */
