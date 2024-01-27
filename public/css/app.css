@@ -11961,12 +11961,27 @@ main .start-display .start:hover {
 main .start-display .start:hover p {
   color: white;
 }
-main .start-display .mario {
+main .start-display .mario-start {
   position: absolute;
   bottom: 30px;
-  left: 30px;
-  width: 260px;
+  left: 40px;
+  width: 270px;
   height: 400px;
+}
+main .start-display .bounceMario {
+  animation: mariobounce 1s ease;
+  animation-iteration-count: infinite;
+}
+@keyframes mariobounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 main .hide {
   display: none;
@@ -12001,14 +12016,14 @@ main .hide {
   left: 600px;
   border-radius: 50%;
   padding: 15px 15px 15px 15px;
-  border: 2px solid black;
+  border: 3px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.chose-mario .speech-bubble .btn-next-chose-mario p {
-  margin: 0;
-  padding: 0;
+.chose-mario .speech-bubble .btn-next-chose-mario:hover {
+  background-color: #6b88fe;
+  border: 3px solid white;
 }
 .chose-mario .speech-bubble .second-speech-bubble {
   width: 700px;
@@ -12023,7 +12038,11 @@ main .hide {
   right: 80px;
   border-radius: 50%;
   padding: 15px 15px 15px 15px;
-  border: 2px solid black;
+  border: 3px solid black;
+}
+.chose-mario .speech-bubble .btn-next-two:hover {
+  background-color: #6b88fe;
+  border: 3px solid white;
 }
 .chose-mario .speech-bubble .third-speech-bubble {
   width: 700px;
@@ -12295,6 +12314,7 @@ main .hide {
   margin: 0;
   padding: 0;
   color: white;
+  font-family: Epson Pixeled;
 }
 .pokemon-surprise .hide {
   display: none;

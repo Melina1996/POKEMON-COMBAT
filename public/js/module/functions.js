@@ -45,7 +45,7 @@ let speechPokemonCombat = document.querySelector(".speech-pokemon-combat")
 
 let vsText = document.querySelector(".vs-text")
 
-export function opponents(){
+export function opponents(playerOne,playerTwo){
 
         logoPokemon.classList.add("hide")
 
@@ -66,7 +66,7 @@ export function opponents(){
     
                 speechPokemonCombat.classList.add("hide")
     
-                vsText.innerText = `coucou`
+                vsText.innerText = `${playerOne.name} against ${playerTwo.name}`
     
             },6000)
 

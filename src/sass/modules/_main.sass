@@ -52,12 +52,22 @@ main
             border: 7px solid #ffcb05
             p
                 color: white
-        .mario
+        .mario-start
             position: absolute
             bottom: 30px
-            left: 30px
-            width: 260px
+            left: 40px
+            width: 270px
             height: 400px
+        .bounceMario
+            animation: mariobounce 1s ease
+            animation-iteration-count: infinite
+        @keyframes mariobounce
+            0%   
+                transform: translateY(0)
+            50%  
+                transform: translateY(-30px)
+            100% 
+                transform: translateY(0)
     .hide 
         display: none
     

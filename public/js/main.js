@@ -24,12 +24,18 @@ export let win = document.querySelector(".winning-display")
 
 let btnStart = document.querySelector(".start")
 
+let marioAvatar = document.querySelector(".mario-start")
+
+btnStart.addEventListener("mouseout",()=>{
+  marioAvatar.classList.toggle("bounceMario")
+})
+
 btnStart.addEventListener("click",()=>{
   startDisplay.classList.add("hide")
   choseDisplay.classList.remove("hide")
 })
 
-//CHOSE MARIO CHARACTER DISPLAY
+//CHOOSE MARIO CHARACTER DISPLAY
 
 let firstBubble = document.querySelector(".first-speech-bubble")
 
@@ -42,6 +48,54 @@ let btnNextOne = document.querySelector(".btn-next-chose-mario")
 let btnNextTwo = document.querySelector(".btn-next-two")
 
 let myMarios = document.querySelector(".my-marios")
+
+// //CREATE CHOSE MARIO CHARACTER DISPLAY
+
+// let choseDisplay = document.createElement("div")
+
+// choseDisplay.setAttribute("class","chose-mario")
+
+// let divSpeechBubble = document.createElement("div")
+
+// divSpeechBubble.setAttribute("class","speech-bubble")
+
+// let firstSpeechBubble = document.createElement("img")
+
+// firstSpeechBubble.src = "./public/assets/img/pixel-speech-bubble (1).gif"
+
+// firstSpeechBubble.setAttribute("class","first-speech-bubble")
+
+// ///first btn with img
+
+// let firstBtn = document.createElement("button")
+
+// firstBtn.setAttribute("class","btn-next-chose-mario")
+
+// let firstBtnImg = document.createElement("img")
+
+// firstBtnImg.src = "./public/assets/img/icons8-arrow-32.png"
+
+// firstBtn.appendChild(firstBtnImg)
+
+// ///second btn with img
+
+// let secondBtn = document.createElement("button")
+
+// secondBtn.setAttribute("class","btn-next-two")
+
+// let secondBtnImg = document.createElement("img")
+
+// secondBtnImg.src = "./public/assets/img/icons8-arrow-32.png"
+
+
+// ///thid speech-bubble
+
+ 
+// choseDisplay.appendChild(divSpeechBubble)
+
+// document.querySelector("main").appendChild(choseDisplay)
+
+
 
 
 //screen is empty besides background-img and after 1.2s, the first bubble appears
@@ -118,8 +172,7 @@ btnNextTwo.addEventListener("click",()=>{
 
     myMarios.classList.remove("hide")
 
-
-  },5000)
+  },6000)
 
 })
 
@@ -161,42 +214,42 @@ allBtnMario.forEach(element => {
 
           choseDisplay.classList.add("hide")
 
-          // darkDisplay.classList.remove("hide")
+          darkDisplay.classList.remove("hide")
 
         }, 2000)
       
 
-        // FUNCTION.bubblesDarkRoom()
+        FUNCTION.bubblesDarkRoom()
 
-        // setTimeout(function(){
+        setTimeout(function(){
 
-          // darkDisplay.classList.add("hide")
+          darkDisplay.classList.add("hide")
 
-          // pokemonSurprise.classList.remove("hide")
+          pokemonSurprise.classList.remove("hide")
 
-          // setTimeout(function(){
+          setTimeout(function(){
 
-            // FUNCTION.opponents()
+            FUNCTION.choseRandomBoss(allPokemons)
+
+            FUNCTION.opponents(chosenMario,FUNCTION.chosenBoss)
 
             setTimeout(function(){
 
-              // pokemonSurprise.classList.add("hide")
+              pokemonSurprise.classList.add("hide")
 
               combatDisplay.classList.remove("hide")
-
-              FUNCTION.choseRandomBoss(allPokemons)
 
               FUNCTION.attackNames(chosenMario)
 
               FUNCTION.attack(chosenMario,FUNCTION.chosenBoss)
 
-            },2000) //war 14000
+            },14000)
 
-          // },2000)
+          },2000)
 
           
 
-        // },14000) 
+        },14000) 
 
       }
     }
