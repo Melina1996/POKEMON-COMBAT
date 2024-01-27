@@ -92,11 +92,11 @@ export function choseRandomBoss(array){
     chosenBoss = array[indexPokemon]
 
     //add the randomly chosen img-link to my div of the opponent
-    bossCombat.src = chosenBoss.frontImg
+    bossCombat.src = chosenBoss.img
 
     bossCombat.setAttribute("originalhp",`${chosenBoss.healthPoints}`)
 
-    document.querySelector(".name-opponent").innerText = chosenBoss.name
+    document.querySelector("#name-opponent").innerText = chosenBoss.name
   }
 } 
 
@@ -155,25 +155,41 @@ let profileHPOne = document.querySelector(".health-points-player-inside")
 
 let profileHPTwo = document.querySelector(".health-points-opponent-inside")
 
+
 export function attackBoss(playerTwo,playerOne){
+
+    bossCombat.classList.remove("shake")
+    bossCombat.classList.add("bounce")
 
       if(chosenAttack == "attack-one"){
         playerTwo.firstAttack(playerOne)
-        gameText.innerText = `${playerTwo.name} attacks ${playerOne.name} and leaves him with ${playerOne.healthPoints} HP`
+        MAIN.playerMario.classList.remove("bounce")
+        MAIN.playerMario.classList.add("shake")
+        gameText.innerText = `${playerTwo.name} attacks ${playerOne.name}. Remaining HP: ${playerOne.healthPoints}`
         profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
       } else if(chosenAttack == "attack-two"){
         playerTwo.secondAttack(playerOne)
-        gameText.innerText = `${playerTwo.name} attacks ${playerOne.name} and leaves him with ${playerOne.healthPoints} HP`
+        MAIN.playerMario.classList.remove("bounce")
+        MAIN.playerMario.classList.add("shake")
+        gameText.innerText = `${playerTwo.name} attacks ${playerOne.name}. Remaining HP: ${playerOne.healthPoints}`
         profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
       } else if(chosenAttack == "attack-three"){
+        MAIN.playerMario.classList.remove("bounce")
+        MAIN.playerMario.classList.add("shake")
         playerTwo.thirdAttack(playerOne)
-        gameText.innerText = `${playerTwo.name} attacks ${playerOne.name} and leaves him with ${playerOne.healthPoints} HP`
+        gameText.innerText = `${playerTwo.name} attacks ${playerOne.name}. Remaining HP: ${playerOne.healthPoints}`
         profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
       } else if(chosenAttack == "attack-four"){
         playerTwo.fourthAttack(playerOne)
         gameText.innerText = `${playerTwo.name} recovers and gains new HP to in total: ${playerOne.healthPoints} HP`
         profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
       }
+    
+    setTimeout(function(){
+        MAIN.playerMario.classList.remove("shake")
+        MAIN.playerMario.classList.add("bounce")
+    }, 1000)
+
 
     if(playerOne.healthPoints <= 0){
 
@@ -197,33 +213,49 @@ function win(){
 }
 
 
+let count = 0
+
+let counterRound = document.querySelectorAll(".level")
+
 //ATTACK FUNCTION AGAINST BOSS
 
 export let allAttackBtns = document.querySelectorAll(".my-attack")
 
 export function attack(playerOne,playerTwo){
-  
-      console.log(playerOne)
-      console.log(playerTwo)
     
           allAttackBtns.forEach(element => {
     
             element.addEventListener("click",(e)=>{
     
               if(playerOne.healthPoints > 0 && playerTwo.healthPoints >0){
+
+                count ++
+
+                counterRound[0].innerText = count
+                counterRound[1].innerText = count
     
                 if(e.target.id == "attack-one"){
                   playerOne.firstAttack(playerTwo)
+                  bossCombat.classList.remove("bounce")
+                  bossCombat.classList.add("shake")
                   gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
                   profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
                 } else if (e.target.id == "attack-two"){
                   playerOne.secondAttack(playerTwo)
+                  bossCombat.classList.remove("bounce")
+                  bossCombat.classList.add("shake")
                   gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
                   profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
                 } else if (e.target.id == "attack-three"){
                   playerOne.thirdAttack(playerTwo)
-                  gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
-                  profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
+                  if(playerOne.stars <= 0){
+                    gameText.innerText = `${e.target.innerText}: ${playerOne.name} can not attack because there are no more stars left`
+                  } else {
+                    bossCombat.classList.remove("bounce")
+                    bossCombat.classList.add("shake")
+                    gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
+                    profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
+                  }
                 } else if (e.target.id == "attack-four"){
                   playerOne.fourthAttack(playerTwo)
                   gameText.innerText = `${e.target.innerText}: ${playerOne.name} recovers and gains new HP to in total: ${playerOne.healthPoints} HP`
@@ -233,7 +265,7 @@ export function attack(playerOne,playerTwo){
               if(playerTwo.healthPoints > 0 && playerOne.healthPoints > 0){
                 randomAttack(attacksOrder)
                 setTimeout(function(){
-                attackBoss(chosenBoss,MAIN.chosenMario);
+                attackBoss(chosenBoss,MAIN.chosenMario)
                 }, 2000)
                 
                 //in case one of the players is dead before boss'attack

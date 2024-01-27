@@ -1,35 +1,34 @@
 
 export class Player{
-    constructor(name,healthPoints,attackPoints,attackNames,backImg,frontImg){
+    constructor(name,healthPoints,attackPoints,attackNames,img){
         this.name = name;
         this.healthPoints = healthPoints;
         this.attackPoints = attackPoints;
         this.attackNames = attackNames;
-        this.backImg = backImg;
-        this.frontImg = frontImg;
+        this.img = img;
     }
 } 
 
 //my Bosses: extend class "Player" and add respective methods for the attacks
  
 export class Charmeleon extends Player {
-    constructor(name,healthPoints,attackPoints,attackNames,backImg,frontImg){
-    super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
+    constructor(name,healthPoints,attackPoints,attackNames,img){
+    super(name,healthPoints,attackPoints,attackNames,img);
     }
 
     firstAttack(opponent){
-        opponent.healthPoints -= this.attackPoints
+        opponent.healthPoints -= 0.5*this.attackPoints
         console.log(opponent.healthPoints)
     }
 
     secondAttack(opponent){
-        opponent.healthPoints -= 2*this.attackPoints
+        opponent.healthPoints -= 1*this.attackPoints
         console.log(opponent.healthPoints)
 
     }
 
     thirdAttack(opponent){
-        opponent.healthPoints -= 3*this.attackPoints
+        opponent.healthPoints -= 2*this.attackPoints
         console.log(opponent.healthPoints)
 
     }
@@ -40,30 +39,29 @@ export class Charmeleon extends Player {
             this.healthPoints = 150
         }
         console.log(this.healthPoints)
-
     }
 }
 
 
 export class Venusaur extends Player {
-    constructor(name,healthPoints,attackPoints,attackNames,backImg,frontImg){
-    super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
+    constructor(name,healthPoints,attackPoints,attackNames,img){
+    super(name,healthPoints,attackPoints,attackNames,img);
     }
 
     firstAttack(opponent){
-        opponent.healthPoints -= this.attackPoints
+        opponent.healthPoints -= 0.5*this.attackPoints
         console.log(opponent.healthPoints)
 
     }
 
     secondAttack(opponent){
-        opponent.healthPoints -= 2*this.attackPoints
+        opponent.healthPoints -= this.attackPoints
         console.log(opponent.healthPoints)
 
     }
 
     thirdAttack(opponent){
-        opponent.healthPoints -= 3*this.attackPoints
+        opponent.healthPoints -= 2*this.attackPoints
         console.log(opponent.healthPoints)
 
     }
@@ -79,24 +77,24 @@ export class Venusaur extends Player {
 }
 
 export class Blastoise extends Player {
-    constructor(name,healthPoints,attackPoints,attackNames,backImg,frontImg){
-    super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
+    constructor(name,healthPoints,attackPoints,attackNames,img){
+    super(name,healthPoints,attackPoints,attackNames,img);
     }
 
     firstAttack(opponent){
-        opponent.healthPoints -= this.attackPoints
+        opponent.healthPoints -= 0.5*this.attackPoints
         console.log(opponent.healthPoints)
 
     }
 
     secondAttack(opponent){
-        opponent.healthPoints -= 2*this.attackPoints
+        opponent.healthPoints -= this.attackPoints
         console.log(opponent.healthPoints)
     }
 
 
     thirdAttack(opponent){
-        opponent.healthPoints -= 3*this.attackPoints
+        opponent.healthPoints -= 2*this.attackPoints
         console.log(opponent.healthPoints)
 
     }
@@ -114,8 +112,9 @@ export class Blastoise extends Player {
 //my Heros: extend class "Player" and add respective methods for the attacks
 
 export class Mario extends Player {
-    constructor(name,healthPoints,attackPoints,attackNames,backImg,frontImg){
-    super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
+    constructor(name,healthPoints,attackPoints,attackNames,img,stars){
+    super(name,healthPoints,attackPoints,attackNames,img);
+    this.stars = stars;
     }
 
     firstAttack(opponent){
@@ -131,8 +130,11 @@ export class Mario extends Player {
 
 
     thirdAttack(opponent){
-        opponent.healthPoints -= 3*this.attackPoints
-        console.log(opponent.healthPoints)
+        if(this.stars >= 2){
+            opponent.healthPoints -= 3*this.attackPoints
+            this.stars -=2
+            console.log(opponent.healthPoints)
+        } 
 
     }
 
@@ -147,8 +149,9 @@ export class Mario extends Player {
 }
 
 export class Peach extends Player {
-    constructor(name,healthPoints,attackPoints,attackNames,backImg,frontImg){
-    super(name,healthPoints,attackPoints,attackNames,backImg,frontImg);
+    constructor(name,healthPoints,attackPoints,attackNames,img,stars){
+    super(name,healthPoints,attackPoints,attackNames,img);
+    this.stars = stars;
     }
 
     firstAttack(opponent){
@@ -164,8 +167,11 @@ export class Peach extends Player {
 
 
     thirdAttack(opponent){
-        opponent.healthPoints -= 3*this.attackPoints
-        console.log(opponent.healthPoints)
+        if(this.stars >= 2){
+            opponent.healthPoints -= 3*this.attackPoints
+            this.stars -=2
+            console.log(opponent.healthPoints)
+        }
 
     }
 

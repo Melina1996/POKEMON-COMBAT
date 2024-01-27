@@ -149,12 +149,12 @@ allBtnMario.forEach(element => {
 
         FUNCTION.disappear(chosenMario)
 
-        playerMario.src = allMarios[i].backImg
+        playerMario.src = allMarios[i].img
 
         //stock the value of the original HP in an attribute of my mario character
         playerMario.setAttribute("originalhp",`${allMarios[i].healthPoints}`)
 
-        document.querySelector(".name-player").innerText = allMarios[i].name
+        document.querySelector("#name-player").innerText = allMarios[i].name
 
         //need Timeout-function so the animation of the disappearing Mario/Peach has enough time
         setTimeout(function(){

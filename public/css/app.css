@@ -12348,36 +12348,45 @@ main .hide {
   flex-direction: column;
   position: relative;
   align-items: center;
+  justify-content: center;
 }
 .battle-display .battle-container .game-on {
   width: 100%;
   height: 100%;
+  font-family: Epson Pixeled;
   display: flex;
-  position: relative;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.battle-display .battle-container .game-on .profile-player {
+.battle-display .battle-container .game-on .battle-section-one {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: column;
+}
+.battle-display .battle-container .game-on .battle-section-one .profile-player {
   width: 200px;
   height: 200px;
-  position: absolute;
-  left: 20px;
-  top: 20px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
-.battle-display .battle-container .game-on .profile-player .level {
+.battle-display .battle-container .game-on .battle-section-one .profile-player .name {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+}
+.battle-display .battle-container .game-on .battle-section-one .profile-player .level {
   padding: 0;
   margin: 0;
   color: black;
-  font-size: 20px;
-  position: absolute;
-  left: 50px;
+  font-size: 18px;
 }
-.battle-display .battle-container .game-on .profile-player .frame {
+.battle-display .battle-container .game-on .battle-section-one .profile-player .frame {
   height: 50px;
   width: 200px;
   border-left: 4px solid black;
@@ -12387,65 +12396,60 @@ main .hide {
   align-items: center;
   gap: 5px;
 }
-.battle-display .battle-container .game-on .profile-player .frame h1, .battle-display .battle-container .game-on .profile-player .frame .h1 {
-  font-size: 20px;
+.battle-display .battle-container .game-on .battle-section-one .profile-player .frame h1, .battle-display .battle-container .game-on .battle-section-one .profile-player .frame .h1 {
+  font-size: 18px;
   padding: 0;
   margin: 0;
+  font-family: Epson Pixeled;
 }
-.battle-display .battle-container .game-on .profile-player .frame .health-points-player {
+.battle-display .battle-container .game-on .battle-section-one .profile-player .frame .health-points-player {
   height: 10px;
   width: 150px;
   position: relative;
   border: grey 1px solid;
   border-radius: 5px;
 }
-.battle-display .battle-container .game-on .profile-player .frame .health-points-player .health-points-player-inside {
+.battle-display .battle-container .game-on .battle-section-one .profile-player .frame .health-points-player .health-points-player-inside {
   background-color: grey;
   position: absolute;
   height: 100%;
 }
-.battle-display .battle-container .game-on .avatar-opponent {
-  width: 200px;
-  height: 250px;
+.battle-display .battle-container .game-on #opponent {
+  width: 90px;
+  height: 90px;
   position: absolute;
   right: 40px;
-  top: 150px;
+  top: 120px;
+}
+.battle-display .battle-container .game-on .battle-section-two {
+  height: 33%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+}
+.battle-display .battle-container .game-on .battle-section-two .profile-opponent {
+  width: 200px;
+  height: 200px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
-  justify-content: center;
-  align-items: center;
 }
-.battle-display .battle-container .game-on .avatar-opponent a {
-  width: 100%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.battle-display .battle-container .game-on .battle-section-two .profile-opponent .name {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
 }
-.battle-display .battle-container .game-on .avatar-opponent a img {
-  width: 90px;
-  heigth: 90px;
-}
-.battle-display .battle-container .game-on .avatar-opponent .profile-opponent {
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 10px;
-}
-.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .level {
+.battle-display .battle-container .game-on .battle-section-two .profile-opponent .level {
   padding: 0;
   margin: 0;
   color: black;
   font-size: 20px;
-  position: absolute;
-  left: 50px;
 }
-.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame {
+.battle-display .battle-container .game-on .battle-section-two .profile-opponent .frame {
   height: 50px;
   width: 200px;
   border-right: 4px solid black;
@@ -12455,58 +12459,142 @@ main .hide {
   align-items: center;
   gap: 5px;
 }
-.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame h1, .battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame .h1 {
+.battle-display .battle-container .game-on .battle-section-two .profile-opponent .frame h1, .battle-display .battle-container .game-on .battle-section-two .profile-opponent .frame .h1 {
   font-size: 20px;
   padding: 0;
   margin: 0;
 }
-.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame .health-points-opponent {
+.battle-display .battle-container .game-on .battle-section-two .profile-opponent .frame .health-points-opponent {
   height: 10px;
   width: 150px;
   position: relative;
   border: grey 1px solid;
   border-radius: 5px;
 }
-.battle-display .battle-container .game-on .avatar-opponent .profile-opponent .frame .health-points-opponent .health-points-opponent-inside {
+.battle-display .battle-container .game-on .battle-section-two .profile-opponent .frame .health-points-opponent .health-points-opponent-inside {
   background-color: grey;
   position: absolute;
   height: 100%;
 }
-.battle-display .battle-container .game-on .player-mario img {
+.battle-display .battle-container .game-on #player-mario {
   position: absolute;
-  bottom: 190px;
+  bottom: 210px;
   left: 30px;
   heigth: 90px;
   width: 90px;
 }
-.battle-display .battle-container .game-on .game-box {
+.battle-display .battle-container .game-on .bounce {
+  animation: bounceTwo 1s ease;
+  animation-iteration-count: infinite;
+}
+@keyframes bounceTwo {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.battle-display .battle-container .game-on .shake {
+  animation: shake 0.5s ease;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+.battle-display .battle-container .game-on .battle-section-three {
+  width: 100%;
+  height: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.battle-display .battle-container .game-on .battle-section-three .game-box {
   width: 90%;
   height: 170px;
   border: 2px solid black;
-  position: absolute;
-  bottom: 5px;
+  background-color: grey;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.battle-display .battle-container .game-on .game-box .game-text-box {
-  width: 50%;
-  height: 100%;
+.battle-display .battle-container .game-on .battle-section-three .game-box .game-text-box {
+  width: 48%;
+  height: 90%;
+  border: 3px black solid;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.battle-display .battle-container .game-on .game-box .fight {
-  width: 50%;
-  height: 100%;
-  border: 2px solid black;
+.battle-display .battle-container .game-on .battle-section-three .game-box .game-text-box .game-text {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+.battle-display .battle-container .game-on .battle-section-three .game-box .fight {
+  width: 48%;
+  height: 90%;
+  border: 3px solid black;
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
-.battle-display .battle-container .game-on .game-box .fight .my-attack {
+.battle-display .battle-container .game-on .battle-section-three .game-box .fight .my-attack {
   width: 45%;
-  height: 45%;
+  height: 43%;
   background: grey;
+  border: 2px black solid;
+  color: black;
+  box-shadow: 1px 1px 0px 0px black, 2px 2px 0px 0px black, 2px 2px 0px 0px black, 4px 4px 0px 0px black, 3px 3px 0px 0px black;
+  margin-bottom: 5px;
 }
-.battle-display .battle-container .game-on .hide {
+.battle-display .battle-container .game-on .battle-section-three .game-box .fight .my-attack .attack-name {
+  font-family: Epson Pixeled;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 10px;
+}
+.battle-display .battle-container .game-on .battle-section-three .game-box .fight .my-attack:hover {
+  background: white;
+}
+.battle-display .battle-container .game-on .battle-section-three .hide {
   display: none;
 }
 .battle-display .battle-container .game-over-display {
@@ -12549,6 +12637,10 @@ main .hide {
   }
 }
 .battle-display .battle-container .hide {
+  display: none;
+}
+
+.hide {
   display: none;
 }
 
