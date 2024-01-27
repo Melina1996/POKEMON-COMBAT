@@ -64,6 +64,40 @@ btnNextOne.addEventListener("click",()=>{
 
 })
 
+let myPeach = document.querySelector("#img-peach")
+
+let statsPeach = document.querySelector(".data-player-one")
+
+let myMario = document.querySelector("#img-mario")
+
+let statsMario = document.querySelector(".data-player-two")
+
+//stats players
+
+//attribute data to h1s player one
+
+document.querySelector("#first-value").innerText = INSTANCE.peach.name 
+
+document.querySelector("#second-value").innerText = INSTANCE.peach.healthPoints 
+
+document.querySelector("#third-value").innerText = INSTANCE.peach.attackPoints 
+
+document.querySelector("#fourth-value").innerText = INSTANCE.mario.name 
+
+document.querySelector("#fifth-value").innerText = INSTANCE.mario.healthPoints 
+
+document.querySelector("#sixth-value").innerText = INSTANCE.mario.attackPoints 
+
+myPeach.addEventListener("mouseover",()=>{
+  statsPeach.classList.toggle("hide")
+})
+
+myMario.addEventListener("mouseover",()=>{
+  statsMario.classList.toggle("hide")
+})
+
+
+
 //on click, the next bubble appears and 5s delayed the marios appear
 btnNextTwo.addEventListener("click",()=>{
 
@@ -79,9 +113,11 @@ btnNextTwo.addEventListener("click",()=>{
 
     myMarios.classList.remove("hide")
 
+
   },5000)
 
 })
+
 
 
 //TRANSITION CHOSE MARIO CHARACTER TO COMBAT DISPLAY
@@ -120,26 +156,26 @@ allBtnMario.forEach(element => {
 
           choseDisplay.classList.add("hide")
 
-          darkDisplay.classList.remove("hide")
+          // darkDisplay.classList.remove("hide")
 
         }, 2000)
       
 
-        FUNCTION.bubblesDarkRoom()
+        // FUNCTION.bubblesDarkRoom()
 
-        setTimeout(function(){
+        // setTimeout(function(){
 
-          darkDisplay.classList.add("hide")
+          // darkDisplay.classList.add("hide")
 
-          pokemonSurprise.classList.remove("hide")
+          // pokemonSurprise.classList.remove("hide")
 
-          setTimeout(function(){
+          // setTimeout(function(){
 
-            FUNCTION.opponents()
+            // FUNCTION.opponents()
 
             setTimeout(function(){
 
-              pokemonSurprise.classList.add("hide")
+              // pokemonSurprise.classList.add("hide")
 
               combatDisplay.classList.remove("hide")
 
@@ -149,13 +185,13 @@ allBtnMario.forEach(element => {
 
               FUNCTION.attack(chosenMario,FUNCTION.chosenBoss)
 
-            },14000)
+            },2000) //war 14000
 
-          },2000)
+          // },2000)
 
           
 
-        },14000) 
+        // },14000) 
 
       }
     }
