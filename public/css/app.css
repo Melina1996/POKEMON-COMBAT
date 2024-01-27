@@ -12690,7 +12690,6 @@ main .hide {
 .winning-display .cheering-peach-and-mario .winning-mario {
   width: 300px;
   height: 300px;
-  margin-top: 100px;
   filter: drop-shadow(5px 15px 15px #222);
   animation: bounce 1s ease;
   animation-iteration-count: infinite;
@@ -12706,25 +12705,34 @@ main .hide {
     transform: translateY(0);
   }
 }
-.winning-display .great-job-box {
+.winning-display .bomb-with-banner {
   width: 100%;
-  height: 20%;
-  background-color: rgba(0, 0, 0, 0.5);
-  filter: drop-shadow(5px 15px 15px #222);
-  margin-bottom: 180px;
+  height: 100%;
+  position: absolute;
+  left: -1000px;
+  z-index: 30;
+  animation: mover 12s ease;
+  animation-fill-mode: forwards;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.winning-display .great-job-box h1, .winning-display .great-job-box .h1 {
-  color: white;
+.winning-display .bomb-with-banner .great-job-box {
+  width: 100%;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(5px 15px 15px #222);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.winning-display .bomb {
-  position: absolute;
-  left: -200px;
-  z-index: 30;
-  animation: mover 3s ease;
-  animation-fill-mode: forwards;
+.winning-display .bomb-with-banner .great-job-box h1, .winning-display .bomb-with-banner .great-job-box .h1 {
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-family: SuperMarioBros-ov7d;
+}
+.winning-display .bomb-with-banner .bomb {
   width: 400px;
   height: 300px;
 }
@@ -12733,7 +12741,7 @@ main .hide {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(1700px);
+    transform: translateX(2500px);
   }
 }
 
