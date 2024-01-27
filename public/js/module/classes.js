@@ -18,19 +18,14 @@ export class Charmeleon extends Player {
 
     firstAttack(opponent){
         opponent.healthPoints -= 0.5*this.attackPoints
-        console.log(opponent.healthPoints)
     }
 
     secondAttack(opponent){
         opponent.healthPoints -= 1*this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     thirdAttack(opponent){
         opponent.healthPoints -= 2*this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     fourthAttack(){
@@ -38,7 +33,7 @@ export class Charmeleon extends Player {
         if(this.healthPoints > 150){
             this.healthPoints = 150
         }
-        console.log(this.healthPoints)
+        console.log(`${this.name} gained 30 HP and has now ${this.healthPoints}`)
     }
 }
 
@@ -50,20 +45,14 @@ export class Venusaur extends Player {
 
     firstAttack(opponent){
         opponent.healthPoints -= 0.5*this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     secondAttack(opponent){
         opponent.healthPoints -= this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     thirdAttack(opponent){
         opponent.healthPoints -= 2*this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     fourthAttack(){
@@ -71,7 +60,7 @@ export class Venusaur extends Player {
         if(this.healthPoints > 140){
             this.healthPoints = 140
         }
-        console.log(this.healthPoints)
+        console.log(`${this.name} gained 30 HP and has now ${this.healthPoints}`)
 
     }
 }
@@ -83,20 +72,15 @@ export class Blastoise extends Player {
 
     firstAttack(opponent){
         opponent.healthPoints -= 0.5*this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     secondAttack(opponent){
         opponent.healthPoints -= this.attackPoints
-        console.log(opponent.healthPoints)
     }
 
 
     thirdAttack(opponent){
         opponent.healthPoints -= 2*this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     fourthAttack(){
@@ -104,8 +88,7 @@ export class Blastoise extends Player {
         if(this.healthPoints > 120){
             this.healthPoints = 120
         }
-        console.log(this.healthPoints)
-
+        console.log(`${this.name} gained 30 HP and has now ${this.healthPoints}`)
     }
 }
 
@@ -119,13 +102,10 @@ export class Mario extends Player {
 
     firstAttack(opponent){
         opponent.healthPoints -= this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     secondAttack(opponent){
         opponent.healthPoints -= 2*this.attackPoints
-        console.log(opponent.healthPoints)
     }
 
 
@@ -133,7 +113,6 @@ export class Mario extends Player {
         if(this.stars >= 2){
             opponent.healthPoints -= 3*this.attackPoints
             this.stars -=2
-            console.log(opponent.healthPoints)
         } 
 
     }
@@ -143,7 +122,7 @@ export class Mario extends Player {
         if(this.healthPoints > 120){
             this.healthPoints = 120
         }
-        console.log(this.healthPoints)
+        console.log(`${this.name} gained 30 HP and has now ${this.healthPoints}`)
 
     }
 }
@@ -156,13 +135,10 @@ export class Peach extends Player {
 
     firstAttack(opponent){
         opponent.healthPoints -= this.attackPoints
-        console.log(opponent.healthPoints)
-
     }
 
     secondAttack(opponent){
         opponent.healthPoints -= 2*this.attackPoints
-        console.log(opponent.healthPoints)
     }
 
 
@@ -170,7 +146,6 @@ export class Peach extends Player {
         if(this.stars >= 2){
             opponent.healthPoints -= 3*this.attackPoints
             this.stars -=2
-            console.log(opponent.healthPoints)
         }
 
     }
@@ -180,7 +155,7 @@ export class Peach extends Player {
         if(this.healthPoints > 140){
             this.healthPoints = 140
         }
-        console.log(this.healthPoints)
+        console.log(`${this.name} gained 30 HP and has now ${this.healthPoints}`)
 
     }
 }

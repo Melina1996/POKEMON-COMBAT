@@ -181,8 +181,8 @@ export function attackBoss(playerTwo,playerOne){
         profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
       } else if(chosenAttack == "attack-four"){
         playerTwo.fourthAttack(playerOne)
-        gameText.innerText = `${playerTwo.name} recovers and gains new HP to in total: ${playerOne.healthPoints} HP`
-        profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
+        gameText.innerText = `${playerTwo.name} recovers and gains new HP to in total: ${playerTwo.healthPoints} HP`
+        profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
       }
     
     setTimeout(function(){
@@ -259,14 +259,14 @@ export function attack(playerOne,playerTwo){
                 } else if (e.target.id == "attack-four"){
                   playerOne.fourthAttack(playerTwo)
                   gameText.innerText = `${e.target.innerText}: ${playerOne.name} recovers and gains new HP to in total: ${playerOne.healthPoints} HP`
-                  profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
+                  profileHPOne.style.width = `${playerOne.healthPoints/MAIN.playerMario.getAttribute("originalhp")*100}%`
                 }
     
               if(playerTwo.healthPoints > 0 && playerOne.healthPoints > 0){
                 randomAttack(attacksOrder)
                 setTimeout(function(){
                 attackBoss(chosenBoss,MAIN.chosenMario)
-                }, 2000)
+                }, 3500)
                 
                 //in case one of the players is dead before boss'attack
               } else {
