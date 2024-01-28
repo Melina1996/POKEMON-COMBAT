@@ -11889,7 +11889,7 @@ textarea.form-control-lg {
 }
 @font-face {
   font-family: "SuperMarioBros-ov7d";
-  src: url("../../../public/assets/fonts/SuperMarioBros-ov7d.ttf");
+  src: url("../../public/assets/fonts/SuperMarioBros-ov7d.ttf");
 }
 body {
   margin: 0;
@@ -11963,7 +11963,7 @@ main .start-display .start:hover p {
 }
 main .start-display .mario-start {
   position: absolute;
-  bottom: 30px;
+  bottom: 95px;
   left: 40px;
   width: 270px;
   height: 400px;
