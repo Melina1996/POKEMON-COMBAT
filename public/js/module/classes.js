@@ -17,19 +17,24 @@ export class Charmeleon extends Player {
     }
 
     firstAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= 0.5*this.attackPoints
     }
 
     secondAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= 1*this.attackPoints
     }
 
     thirdAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= 2*this.attackPoints
     }
 
     fourthAttack(){
         this.healthPoints += 30
+        document.querySelector("#healing-pokemon-audio").play()
+
         if(this.healthPoints > 150){
             this.healthPoints = 150
         }
@@ -44,19 +49,24 @@ export class Venusaur extends Player {
     }
 
     firstAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= 0.5*this.attackPoints
     }
 
     secondAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= this.attackPoints
     }
 
     thirdAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= 2*this.attackPoints
     }
 
     fourthAttack(){
         this.healthPoints += 40
+        document.querySelector("#healing-pokemon-audio").play()
+
         if(this.healthPoints > 140){
             this.healthPoints = 140
         }
@@ -71,20 +81,25 @@ export class Blastoise extends Player {
     }
 
     firstAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= 0.5*this.attackPoints
     }
 
     secondAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= this.attackPoints
     }
 
 
     thirdAttack(opponent){
+        document.querySelector("#strike-pokemon-audio").play()
         opponent.healthPoints -= 2*this.attackPoints
     }
 
     fourthAttack(){
         this.healthPoints += 20
+        document.querySelector("#healing-pokemon-audio").play()
+
         if(this.healthPoints > 120){
             this.healthPoints = 120
         }
@@ -101,16 +116,19 @@ export class Mario extends Player {
     }
 
     firstAttack(opponent){
+        document.querySelector("#strike-audio").play()
         opponent.healthPoints -= this.attackPoints
     }
 
     secondAttack(opponent){
+        document.querySelector("#strike-audio").play()
         opponent.healthPoints -= 2*this.attackPoints
     }
 
 
     thirdAttack(opponent){
         if(this.stars >= 2){
+            document.querySelector("#strike-audio").play()
             opponent.healthPoints -= 3*this.attackPoints
             this.stars -=2
         } 
@@ -118,6 +136,7 @@ export class Mario extends Player {
     }
 
     fourthAttack(){
+        document.querySelector("#recover-audio").play()
         this.healthPoints += 20
         if(this.healthPoints > 120){
             this.healthPoints = 120
@@ -134,16 +153,19 @@ export class Peach extends Player {
     }
 
     firstAttack(opponent){
+        document.querySelector("#strike-audio").play()
         opponent.healthPoints -= this.attackPoints
     }
 
     secondAttack(opponent){
+        document.querySelector("#strike-audio").play()
         opponent.healthPoints -= 2*this.attackPoints
     }
 
 
     thirdAttack(opponent){
         if(this.stars >= 2){
+            document.querySelector("#strike-audio").play()
             opponent.healthPoints -= 3*this.attackPoints
             this.stars -=2
         }
@@ -151,6 +173,7 @@ export class Peach extends Player {
     }
 
     fourthAttack(){
+        document.querySelector("#recover-audio").play()
         this.healthPoints += 20
         if(this.healthPoints > 140){
             this.healthPoints = 140

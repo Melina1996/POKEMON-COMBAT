@@ -12,10 +12,9 @@ export let thirdDarkBubble = document.querySelector(".bubble-dark-three")
 
 export function bubblesDarkRoom(){
     setTimeout(function(){
-
         firstDarkBubble.classList.remove("hide")
-        
-    }, 1000)
+        document.querySelector("#falling-audio").play()
+    }, 2000)
 
     setTimeout(function(){
 
@@ -122,9 +121,15 @@ export function disappear(player){
   if(player.name == "MARIO"){
     myMario.classList.remove("bounce")
     myMario.classList.add("tube")
+    document.querySelector("#tube-audio").play()
+    document.querySelector("#title-audio").pause()
+
   } else if(player.name == "PEACH"){
     myPeach.classList.remove("bounce")
     myPeach.classList.add("tube")
+    document.querySelector("#tube-audio").play()
+    document.querySelector("#title-audio").pause()
+
   }
 }
 
@@ -203,13 +208,16 @@ export function attackBoss(playerTwo,playerOne){
 function gameOver(){
     MAIN.runningGame.classList.add("hide")
     MAIN.gameOver.classList.remove("hide")
+    document.querySelector("#game-over-audio").play()
 }
+
 
 //show losing display
 
 function win(){
     MAIN.combatDisplay.classList.add("hide")
     MAIN.win.classList.remove("hide")
+    document.querySelector("#victory-audio").play()
 }
 
 
@@ -238,13 +246,13 @@ export function attack(playerOne,playerTwo){
                   playerOne.firstAttack(playerTwo)
                   bossCombat.classList.remove("bounce")
                   bossCombat.classList.add("shake")
-                  gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
+                  gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name}. Remaining HP: ${playerTwo.healthPoints}`
                   profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
                 } else if (e.target.id == "attack-two"){
                   playerOne.secondAttack(playerTwo)
                   bossCombat.classList.remove("bounce")
                   bossCombat.classList.add("shake")
-                  gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
+                  gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name}. Remaining HP: ${playerTwo.healthPoints}`
                   profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
                 } else if (e.target.id == "attack-three"){
                   playerOne.thirdAttack(playerTwo)
@@ -253,7 +261,7 @@ export function attack(playerOne,playerTwo){
                   } else {
                     bossCombat.classList.remove("bounce")
                     bossCombat.classList.add("shake")
-                    gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name} and leaves him with ${playerTwo.healthPoints} HP`
+                    gameText.innerText = `${e.target.innerText}: ${playerOne.name} attacks ${playerTwo.name}. Remaining HP: ${playerTwo.healthPoints}`
                     profileHPTwo.style.width = `${playerTwo.healthPoints/bossCombat.getAttribute("originalhp")*100}%`
                   }
                 } else if (e.target.id == "attack-four"){

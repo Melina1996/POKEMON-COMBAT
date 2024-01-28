@@ -26,6 +26,7 @@ let btnStart = document.querySelector(".start")
 
 let marioAvatar = document.querySelector(".mario-start")
 
+
 btnStart.addEventListener("mouseout",()=>{
   marioAvatar.classList.toggle("bounceMario")
 })
@@ -33,6 +34,7 @@ btnStart.addEventListener("mouseout",()=>{
 btnStart.addEventListener("click",()=>{
   startDisplay.classList.add("hide")
   choseDisplay.classList.remove("hide")
+  document.querySelector("#title-audio").play()
 })
 
 //CHOOSE MARIO CHARACTER DISPLAY
@@ -226,6 +228,8 @@ allBtnMario.forEach(element => {
           darkDisplay.classList.add("hide")
 
           pokemonSurprise.classList.remove("hide")
+
+          document.querySelector("#battle-audio").play()
 
           setTimeout(function(){
 
