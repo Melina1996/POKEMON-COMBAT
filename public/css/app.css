@@ -11887,10 +11887,6 @@ textarea.form-control-lg {
   font-family: "Pokemon Pixel Font Regular";
   src: url("https://www.fontsaddict.com/fontface/pokemon-pixel-font-regular.ttf");
 }
-@font-face {
-  font-family: "SuperMarioBros-ov7d";
-  src: url("../../public/assets/fonts/SuperMarioBros-ov7d.ttf");
-}
 body {
   margin: 0;
   padding: 0;
@@ -11963,7 +11959,7 @@ main .start-display .start:hover p {
 }
 main .start-display .mario-start {
   position: absolute;
-  bottom: 95px;
+  bottom: 97px;
   left: 40px;
   width: 270px;
   height: 400px;
