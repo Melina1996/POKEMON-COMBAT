@@ -11887,6 +11887,10 @@ textarea.form-control-lg {
   font-family: "Pokemon Pixel Font Regular";
   src: url("https://www.fontsaddict.com/fontface/pokemon-pixel-font-regular.ttf");
 }
+@font-face {
+  font-family: "SuperMarioBros-ov7d";
+  src: url("../../public/assets/fonts/SuperMarioBros-ov7d.ttf");
+}
 body {
   margin: 0;
   padding: 0;
