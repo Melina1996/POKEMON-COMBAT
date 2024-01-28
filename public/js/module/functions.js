@@ -274,7 +274,7 @@ export function attack(playerOne,playerTwo){
                 randomAttack(attacksOrder)
                 setTimeout(function(){
                 attackBoss(chosenBoss,MAIN.chosenMario)
-                }, 3500)
+                }, 2500)
                 
                 //in case one of the players is dead before boss'attack
               } else {
